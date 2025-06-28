@@ -7,7 +7,10 @@ export const createUrl = async (req: Request, res: Response) => {
     const url = req.body.url;
     const callBackUrl = uuid().slice(0, 5);
     await ShortUrl.create({ url, callBackUrl });
-    res.json({ shortUrl: `${process.env.BASE_URL}/${callBackUrl}` });
+    res.json({
+      message: 'Success',
+      data: `${process.env.BASE_URL}/${callBackUrl}`,
+    });
   } catch (error) {
     console.log(error);
   }
