@@ -1,9 +1,9 @@
+import express, { Request, Response } from 'express';
 const app = express();
 const port = 8080;
 import cors from 'cors';
 import env from 'dotenv';
 env.config();
-import express, { Request, Response } from 'express';
 import { connect } from './config/db';
 connect();
 app.use(express.json());
