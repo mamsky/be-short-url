@@ -8,6 +8,9 @@ const app = express();
 const port = 8080;
 connect();
 app.use(express.json());
+app.get('/', (req: Request, res: Response) => {
+  res.send('Short Url create by paste');
+});
 
 app.post('/short-link', async (req: Request, res: Response) => {
   try {
